@@ -1,0 +1,19 @@
+---
+import Hero from "../components/Hero.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/shared/Button.astro";
+import Customers from "../components/Customers.astro";
+import HomeServices from "../components/HomeServices.astro";
+---
+
+<MainLayout>
+	<Hero>
+		<Button
+			link="/"
+			buttonText="Agenda una llamada"
+			classes="Button Button-primary"
+		/>
+	</Hero>
+	<Customers />
+	<HomeServices />
+</MainLayout>

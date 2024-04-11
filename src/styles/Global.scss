@@ -1,0 +1,50 @@
+@use './normalize';
+
+:root {
+    color-scheme: light dark;
+    //colors
+    --ui-black: #221B25;
+    --ui-purple-light: #E4CDEE;
+    --ui-purple-deep: #9940C1;
+    --ui-gray: #EBEAEC;
+    --ui-green: #CCEBEA;
+    --ui-gray-light: #F3F2F4;
+
+    // Layout utils
+    -container-lg: 1250px;
+}
+
+html {
+    font-family: var(--main-font);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    background-color: var(--ui-black);
+    color: var(--ui-purple);
+}
+
+//Layout utils
+.Container {
+    display: inherit;
+    width: 100%;
+    height: inherit;
+    max-width: 1350px;
+    margin: 0 auto;
+    flex: inherit;
+    flex-flow: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    padding: 0 1em;
+    position: relative;
+    gap: inherit;
+}
+

@@ -1,0 +1,33 @@
+---
+import helpYouSectionIf from "../data/siteContents";
+interface Props {
+	cardlabel: string;
+	cardText: string;
+	classes: string;
+}
+
+const { cardlabel, cardText, classes } = Astro.props;
+---
+
+<div class:list={["Card", [classes]]}>
+	<span class="Card-label"> {cardlabel} </span>
+	<p class="Card-text">
+		{cardText}
+	</p>
+	<slot />
+</div>
+
+<style lang="scss">
+	.Card {
+		padding: 1em;
+		border-radius: 1rem;
+		color: var(--ui-black);
+	}
+	.BgGreen {
+		background-color: var(--ui-green);
+	}
+
+	.BgPurpleLight {
+		background-color: var(--ui-purple-light);
+	}
+</style>

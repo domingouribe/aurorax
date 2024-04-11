@@ -1,0 +1,65 @@
+---
+import Image from "astro/components/Image.astro";
+import iPhone from "../assets/images/iPhone14Pro.svg";
+import siteContent from "../data/siteContents";
+---
+
+<section class="Hero">
+	<div class="Container">
+		<article class="Hero-article">
+			<h1 class="Hero-title">{siteContent.hero.title}</h1>
+			<p class="Hero-text">{siteContent.hero.text}</p>
+			<slot />
+		</article>
+		<article class="Hero-media">
+			<Image
+				src={iPhone}
+				alt={"iPhone 14 screen"}
+				width={213}
+				class={"Iphone"}
+			/>
+		</article>
+	</div>
+</section>
+
+<style lang="scss">
+	.Hero {
+		display: flex;
+		background-image: url("../assets/images/top-customers.svg");
+		background-repeat: no-repeat;
+		background-position: 0 100%;
+		min-height: 518px;
+		align-items: center;
+		justify-content: space-between;
+		&-article {
+			max-width: 656px;
+			min-height: 267px;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+		}
+
+		&-title {
+			font-size: 2.225rem;
+			line-height: 2.875rem;
+			margin: 0;
+		}
+
+		&-text {
+			font-size: 1.125rem;
+			line-height: 1.75rem;
+		}
+
+		&-media {
+			display: flex;
+			background-image: url("../assets/images/top-customers.svg");
+			background-repeat: no-repeat;
+			background-position: 0 100%;
+			min-height: 518px;
+
+			.Iphone {
+				width: 208.77px;
+			}
+		}
+	}
+</style>

@@ -1,0 +1,69 @@
+---
+interface Props {
+	link: string;
+	buttonText: string;
+	classes: string;
+	target?: string;
+}
+
+const { link, buttonText, classes, target = "_self" } = Astro.props;
+---
+
+<a target={target} href={link} class={classes}>{buttonText}</a>
+
+<style lang="scss">
+	.Button {
+		display: flex;
+		text-decoration: none;
+		transition: all 0.1s ease;
+		width: fit-content;
+		justify-content: center;
+		align-items: center;
+		justify-content: space-between;
+		text-align: center;
+		font-weight: 700;
+		border-radius: 3em;
+		padding: 8px 24px;
+
+		&:hover {
+			border: solid 2px var(--uiYellow);
+			scale: 1.05;
+		}
+
+		&:active {
+			scale: 0.95;
+			box-shadow: rgb(96, 11, 104) 3px 3px 20px;
+		}
+	}
+
+	.Button-primary {
+		background-color: var(--ui-purple-light);
+		color: var(--ui-black);
+		border: none;
+	}
+
+	.Button-sm {
+		padding: 0.9em 1.3em;
+		font-size: 0.7rem;
+	}
+
+	.Button-md {
+		padding: 1em 1.5em;
+		font-size: 1rem;
+	}
+
+	.Button-lg {
+		padding: 1.1em 2em;
+		font-size: 1.1rem;
+	}
+
+	@media screen and (max-width: 590px) {
+		.Button {
+			width: 100%;
+		}
+		.Button-md {
+			padding: 0.7em 1em;
+			font-size: 0.7rem;
+		}
+	}
+</style>

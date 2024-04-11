@@ -1,0 +1,67 @@
+---
+import Image from "astro/components/Image.astro";
+import Femsa from "../assets/images/customers-logos/femsa-salud.svg";
+import CruzVerde from "../assets/images/customers-logos/cruz-verde.svg";
+import Spin from "../assets/images/customers-logos/spin.svg";
+import HogarCristo from "../assets/images/customers-logos/hogar-de-cristo.svg";
+import Maicao from "../assets/images/customers-logos/maicao.svg";
+import Fybeca from "../assets/images/customers-logos/fybeca.svg";
+import Buildpeer from "../assets/images/customers-logos/buildpeer.svg";
+import Developers from "../assets/images/customers-logos/developers.svg";
+import Callpicker from "../assets/images/customers-logos/callpicker.svg";
+import Doraldent from "../assets/images/customers-logos/doraldent.svg";
+import Axelera from "../assets/images/customers-logos/axelera.svg";
+import CuiDerma from "../assets/images/customers-logos/cuiderma.svg";
+import Clak from "../assets/images/customers-logos/clak.svg";
+import Awsport from "../assets/images/customers-logos/awsport.svg";
+import MonAmour from "../assets/images/customers-logos/mon-amour.svg";
+---
+
+<section class="Customers">
+	<div class="Container">
+		<div class="Customers-items">
+			<Image src={Femsa} alt={"Awsport's logo"} width={137.29} />
+			<Image src={CruzVerde} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Spin} alt={"Awsport's logo"} width={137.29} />
+			<Image src={HogarCristo} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Maicao} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Fybeca} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Buildpeer} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Developers} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Callpicker} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Doraldent} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Axelera} alt={"Awsport's logo"} width={137.29} />
+			<Image src={CuiDerma} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Clak} alt={"Awsport's logo"} width={137.29} />
+			<Image src={Awsport} alt={"Awsport's logo"} width={137.29} />
+			<Image src={MonAmour} alt={"Awsport's logo"} width={137.29} />
+		</div>
+	</div>
+</section>
+<footer class="Customers-footer"></footer>
+
+<style lang="scss">
+	.Customers {
+		background-color: var(--ui-gray-light);
+		height: auto;
+
+		&-items {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			row-gap: 1.75em;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&-footer {
+			display: flex;
+			background-image: url("../assets/images/bottom-customers.svg");
+			background-repeat: no-repeat;
+			background-position: 0 100%;
+			min-height: 282px;
+		}
+	}
+</style>
