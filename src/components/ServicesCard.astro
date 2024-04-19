@@ -1,4 +1,6 @@
 ---
+import helpYouSectionIf from "../data/siteContents";
+
 interface Props {
 	cardlabel: string;
 	cardText: string;
@@ -10,9 +12,7 @@ const { cardlabel, cardText, classes } = Astro.props;
 
 <div class:list={["Card", [classes]]}>
 	<span class="Card-label"> {cardlabel} </span>
-	<p class="Card-text">
-		{cardText}
-	</p>
+	<p class="Card-text">{cardText}</p>
 	<slot />
 </div>
 

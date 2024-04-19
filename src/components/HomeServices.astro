@@ -3,30 +3,18 @@ import { Image } from "astro:assets";
 import CanHelpYouImage from "../assets/images/CanHelpYouImage.png";
 import Card from "../components/Card.astro";
 import Button from "./shared/Button.astro";
+import ServicesCard from "./ServicesCard.astro";
 ---
 
 <section class="CanHelpYou">
 	<div class="Container">
 		<h2 class="CanHelpYou-title">Puedo ayudarte si...</h2>
 		<section class="Services-cards">
-			<Card
-				classes="BgPurpleLight"
-				cardlabel="UX UI Design"
-				cardText="Necesitas diseñar una nueva interfaz o funcionalidad para tu producto que entregue la mejor experiencia de usuario para tu sitio web o app.">
-				<Button link="/" buttonText="Necesito UX UI Design" classes="Button" />
-			</Card>
-			<Card
-				classes="BgGreen"
-				cardlabel="UX UI Design"
-				cardText="Necesitas conocer sobre la persona que usa tu producto o servicio para adaptar tu servicio o producto a lo que hace, necesita y desea.">
-				<Button link="/" buttonText="Necesito UX Research" classes="Button" />
-			</Card>
-			<Card
-				classes="BgPurpleLight"
-				cardlabel="UX UI Design"
-				cardText="Necesitas saber si tu proyecto, servicio o producto tiene oportunidades de mejora que puedan estar afectando el performance.">
-				<Button link="/" buttonText="Necesito UX Audit" classes="Button" />
-			</Card>
+			{
+				helpYouSectionIf.map(
+					(card: { cardlabel: unknown; cardText: unknown }) => <ServicesCard />
+				)
+			}
 		</section>
 
 		<section class="AboutNumbers">
