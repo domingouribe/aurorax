@@ -1,31 +1,79 @@
 ---
 import navItems from "../../data/navItems";
+import { Image } from "astro:assets";
+import Brand from "/src/assets/images/logo-auxrora.svg";
 ---
 
 <nav class="Navbar">
-
-	
-
-	{
-		navItems.map((a) => (
-			<a class="Navbar-link" href={a.href}>
-				{a.text}
-			</a>
-		))
-	}
+	<a href="/" aira-label="Ir al inicio" class="Brand">
+		<Image src={Brand} alt="Brand Auxrora" width={59} height={40} />
+	</a>
+	<button class="Bars" aria-label="Navigation menu">
+		<span class="Bars-line"></span>
+		<span class="Bars-line"></span>
+		<span class="Bars-line"></span>
+	</button>
+	<div class="menu">
+		{
+			navItems.map((a) => (
+				<a class="Navbar-link" href={a.href}>
+					{a.text}
+				</a>
+			))
+		}
+	</div>
 </nav>
 
 <style lang="scss">
 	.Navbar {
-		gap: 2.5em;
+		gap: 1em;
 		display: flex;
 		flex-flow: row wrap;
 		align-items: center;
+		justify-content: space-between;
 
+		.menu {
+			gap: 2.5em;
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+		}
 		&-link {
 			color: var(--ui-purple-light);
 			text-decoration: none;
 			text-transform: capitalize;
+		}
+		.Bars {
+			display: none;
+			width: 40px;
+			border: none;
+			background: none;
+			flex-flow: column;
+			cursor: pointer;
+			overflow: hidden;
+			z-index: 2;
+
+			&-line {
+				height: 3px;
+				width: 100%;
+				background-color: #ffffff;
+				display: block;
+				margin-top: 5px;
+				transition: all 0.2s ease;
+			}
+			.TransformBars {
+				span:nth-child(1) {
+					transform: translateY(8px) rotate(45deg);
+				}
+
+				span:nth-child(2) {
+					opacity: 0;
+				}
+
+				span:nth-child(3) {
+					transform: translateY(-8px) rotate(-45deg);
+				}
+			}
 		}
 	}
 </style>
