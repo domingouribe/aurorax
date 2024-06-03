@@ -1,15 +1,27 @@
 ---
-import BaseHead from "../components/shared/BaseHead.astro";
-import Header from "../components/shared/Header.astro";
+import BaseHead from "@/components/shared/BaseHead.astro";
+import Header from "@/components/shared/Header.astro";
+import Footer from "@/components/shared/Footer.astro";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+import { fade } from "astro:transitions";
+import GoogleAnalytics from "@/components/shared/GoogleAnalytics.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es-CL" transition:animate={fade({ duration: "0.3s" })}>
 	<head>
-		<BaseHead />
+		<GoogleAnalytics />
+		<BaseHead title={title} description={description} />
 	</head>
 	<body>
 		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
