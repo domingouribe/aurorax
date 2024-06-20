@@ -1,18 +1,21 @@
 ---
-import Navbar from "./Navbar.astro";
+import NavBar from "./NavBar.astro";
+
+// import NavBar from "./NavBar.astro";
 ---
 
 <header class="Header">
-	<div class="Container">
-		<Navbar />
-	</div>
+	<NavBar />
 </header>
 
-<style lang="scss">
+<style>
 	.Header {
 		display: flex;
+		flex-wrap: nowrap;
 		justify-content: space-between;
-		padding: 1em 0;
-		border-bottom: solid 2px var(--ui-purple-light);
+		align-items: center;
+		background-color: rgb(63, 62, 62);
+		position: relative;
+		padding: 2em;
 	}
 </style>

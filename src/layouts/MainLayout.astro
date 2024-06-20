@@ -9,19 +9,25 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-import { fade } from "astro:transitions";
+// import { fade } from "astro:transitions";
 import GoogleAnalytics from "@/components/shared/GoogleAnalytics.astro";
 ---
 
 <!doctype html>
-<html lang="es-CL" transition:animate={fade({ duration: "0.3s" })}>
+<!-- <html lang="es-CL" transition:animate={fade({ duration: "0.3s" })}> -->
+<html lang="es-CL">
 	<head>
 		<GoogleAnalytics />
 		<BaseHead title={title} description={description} />
 	</head>
 	<body>
 		<Header />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer />
+		<script>
+			import "../scripts/menu";
+		</script>
 	</body>
 </html>

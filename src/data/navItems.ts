@@ -11,7 +11,7 @@ const navItems = [
     },
     {
         text: "servicios",
-        href: "/servicios",
+        href: "/services",
         style: "style",
     },
     {

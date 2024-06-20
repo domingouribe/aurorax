@@ -1,0 +1,20 @@
+---
+import Image from "astro/components/Image.astro";
+import Logo from "@/assets/images/logo-auxrora.svg";
+---
+
+<a href="/" class="Header-brand">
+	<Image
+		src={Logo}
+		alt={"Logo Aurorax - Arcoiris de colores morado, magenta, beige y celeste y palabra Auroraz abajo"}
+        width={60}
+        height={40}
+	/>
+</a>
+<style>
+	.Header-brand {
+		font-size: 1.2rem;
+		text-decoration: none;
+		color: aqua;
+	}
+</style>
